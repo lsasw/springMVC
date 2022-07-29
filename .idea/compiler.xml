@@ -6,8 +6,10 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="spring-03-annotation" />
         <module name="spring-01-servlet" />
         <module name="spring-02-hellomvc" />
+        <module name="spring-04-controller" />
       </profile>
     </annotationProcessing>
   </component>

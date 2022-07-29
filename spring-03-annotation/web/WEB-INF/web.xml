@@ -11,7 +11,7 @@
         <!--dispatchServlet要绑定的配置文件-->
         <init-param>
             <param-name>contextConfigLocation</param-name>
-            <param-value>classpath:springmvc-servlet.xml</param-value>
+            <param-value>classpath:spring-mvcServlet.xml</param-value>
         </init-param>
         <!--启动级别：1-->
         <load-on-startup>1</load-on-startup>
@@ -22,4 +22,5 @@
         <servlet-name>springmvc</servlet-name>
         <url-pattern>/</url-pattern>
     </servlet-mapping>
+
 </web-app>
