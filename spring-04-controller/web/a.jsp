@@ -11,8 +11,14 @@
     <title>Title</title>
 </head>
 <body>
-<form action="/add/5/6" method="post">
-    <input type="submit">
+<h1>
+
+    转发结果
+</h1>
+
+<form action="/e/t1" method="post">
+    <input type="text" name="name">
+    <input type="submit" >
 </form>
 </body>
 </html>

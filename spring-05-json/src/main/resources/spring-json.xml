@@ -12,14 +12,22 @@
 
 
     <context:component-scan base-package="org.example.controller"/>
-    <!--自动扫描包，让指定包下的注解生成，由ioc容器同一管理-->
 
-<!--    &lt;!&ndash;让springmvc 不处理静态资源&ndash;&gt;-->
-<!--    <mvc:default-servlet-handler/>-->
-<!--&lt;!&ndash;自动获取映射处理&ndash;&gt;-->
-<!--    <mvc:annotation-driven/>-->
-<!--这里可以使用注解代替-->
-
+    <!-- JSON乱码问题配置 -->
+    <mvc:annotation-driven>
+        <mvc:message-converters register-defaults="true">
+            <bean class="org.springframework.http.converter.StringHttpMessageConverter">
+                <constructor-arg value="UTF-8"/>
+            </bean>
+            <bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+                <property name="objectMapper">
+                    <bean class="org.springframework.http.converter.json.Jackson2ObjectMapperFactoryBean">
+                        <property name="failOnEmptyBeans" value="false"/>
+                    </bean>
+                </property>
+            </bean>
+        </mvc:message-converters>
+    </mvc:annotation-driven>
 
     <!--视图解析 就是找到页面 模板引擎有多个： thymeleaf/ freemarker-->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"
@@ -28,8 +36,5 @@
         <property name="prefix" value="/WEB-INF/jsp/"/>
         <property name="suffix" value=".jsp"/>
     </bean>
-<!--    <bean name="/test" class="org.example.controller.controllerTest01"/>-->
-
-
 
 </beans>
