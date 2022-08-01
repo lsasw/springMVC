@@ -1,5 +1,6 @@
 package org.example.controller;
 
+import com.alibaba.fastjson.JSON;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
@@ -63,8 +64,7 @@ public class UserController {
         userList.add(user4);
         userList.add(user5);
 
-
-        return JsonUtil.getJson(userList);
+        return JSON.toJSONString(userList);
     }
 
 

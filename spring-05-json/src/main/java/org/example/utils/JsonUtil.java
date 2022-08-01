@@ -12,6 +12,8 @@ import java.text.SimpleDateFormat;
  * @version 1.0
  */
 public class JsonUtil {
+
+
     public static String getJson(Object obj) {
         return getJson(obj, "yyyy-MM-dd HH:mm:ss");
     }
